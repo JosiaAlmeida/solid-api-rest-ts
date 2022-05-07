@@ -1,9 +1,10 @@
 import { Router } from "express";
+import { createUserControll } from "./useCases/CreateUser";
 
 const router = Router()
 
-router.get("/users", (request, response) => {
-    return response.status(201).send();
+router.post("/users", (request, response) => {
+    return createUserControll.handle(request, response)
 })
 
 
